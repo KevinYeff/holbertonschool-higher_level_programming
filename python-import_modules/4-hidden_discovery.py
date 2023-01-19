@@ -4,4 +4,4 @@ if __name__ == "__main__":
     hideContent = dir(hidden_4)
     for hideNames in hideContent:
         if hideNames != "__":
-            print(hidNames)
+            print(hideNames)
