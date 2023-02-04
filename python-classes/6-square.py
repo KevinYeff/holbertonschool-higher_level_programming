@@ -7,8 +7,8 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """ New way to print square"""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
     """defining method as getter"""
     @property
     def size(self):
@@ -28,7 +28,7 @@ class Square:
         return self.__position
     """ position setter """
     @position.setter
-    def position(self):
+    def position(self, value):
         if type(value) != tuple or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         if not all(isinstance(i, int) and i >= 0 for i in value):
