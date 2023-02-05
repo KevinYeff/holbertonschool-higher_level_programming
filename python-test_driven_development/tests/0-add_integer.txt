@@ -13,7 +13,7 @@ Make Sure Documentation Exists:
     >>> print(len(function_documentation) > 0)
     True
 
-Correct Usage:
+tests:
 
     >>> print(add_integer(1, 2))
     3
@@ -33,7 +33,47 @@ Correct Usage:
     >>> print(add_integer(8**0.3, -2))
     -1
 
-Test use of default b=98 value:
+Test for default b=98 value:
      >>> print(add_integer(1))
      99
 
+Test special float NaN in Python (not a number):
+     >>> print(add_integer(float("NaN")))
+     Traceback (most recent call last):
+     ...
+     ValueError: cannot convert float NaN to integer
+
+Test max/min numbers Python can handle ("inf" is infinity):
+     >>> print(add_integer(float("inf")))
+     Traceback (most recent call last):
+     ...
+     OverflowError: cannot convert float infinity to integer
+     >>> print(add_integer(float("-inf")))
+     Traceback (most recent call last):
+     ...
+     OverflowError: cannot convert float infinity to integer
+
+Errors:
+    >>> print(add_integer(4, "School"))
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> print(add_integer("Holberton", "School"))
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> print(add_integer(None, 3))
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> print(add_integer([1, 2, 3], 3))
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> print(add_integer(foo(3), -2))
+    Traceback (most recent call last):
+    NameError: name 'foo' is not defined
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
