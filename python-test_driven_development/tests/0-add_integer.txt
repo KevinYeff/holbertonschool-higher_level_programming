@@ -1,0 +1,35 @@
+The Add_Integer Module:
+=======================
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Make Sure Documentation Exists:
+
+    >>> module_documentation = __import__("0-add_integer").__doc__
+    >>> print(len(module_documentation) > 0)
+    True
+
+    >>> function_documentation = __import__("0-add_integer").add_integer.__doc__
+    >>> print(len(function_documentation) > 0)
+    True
+
+Correct Usage:
+
+    >>> print(add_integer(1, 2))
+    3
+
+    >>> print(add_integer(100, -2))
+    98
+
+    >>> print(add_integer(100.3, -2))
+    98
+
+    >>> print(add_integer(-100.3, -2))
+    -102
+
+    >>> print(add_integer(2**3, -2))
+    6
+
+    >>> print(add_integer(8**0.3, -2))
+    -1
+
