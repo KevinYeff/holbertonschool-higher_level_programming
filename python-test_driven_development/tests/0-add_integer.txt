@@ -32,5 +32,8 @@ Correct Usage:
 
     >>> print(add_integer(8**0.3, -2))
     -1
-    >>> add_integer("4", "5")
-    9
+
+Test use of default b=98 value:
+     >>> print(add_integer(1))
+     99
+
