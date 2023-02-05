@@ -24,7 +24,8 @@ def matrix_divided(matrix, div):
     n = len(matrix[0])
     if not all(map(lambda x: len(x) == n, matrix)):
         raise TypeError("Each row of the matrix must have the same size")
-    if not all(map(lambda x: all(map(lambda y: type(y) in [int, float], x)), matrix)):
+    if not all(map(lambda x:
+                   all(map(lambda y: type(y) in [int, float], x)), matrix)):
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats")
     return [[round(y / div, 2) for y in x] for x in matrix]
