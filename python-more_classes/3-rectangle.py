@@ -54,4 +54,5 @@ class Rectangle:
         """ Prints a rectangle """
         if self.width == 0 or self.height == 0:
             return ""
-        return ("\n".join([("#" * self.__width) for i in range(self.__height)]))
+        return ("\n".join([("#" * self.__width)
+                           for i in range(self.__height)]))
