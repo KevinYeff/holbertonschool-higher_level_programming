@@ -31,8 +31,20 @@ class BaseGeometry:
             raise ValueError("{:s} must be greater than 0".format(name))
 
 
+"""
+Defines a Class Named Rectangle
+"""
+
+
 class Rectangle(BaseGeometry):
+    """
+    Defines the class Rectangle that inherits from BaseGeometry
+    """
+
     def __init__(self, width, height):
+        """
+        Inicializes an instance of the class Rectangle
+        """
         self.integer_validator("width", width)
         self.__width = width
         self.integer_validator("height", height)
