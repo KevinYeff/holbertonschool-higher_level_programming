@@ -1,9 +1,8 @@
 #!/usr/bin/python3
+"""
+Defines a Class named Rectangle
+"""
 BaseGeometry = __import__("7-base_geometry").BaseGeometry
-
-"""
-Defines a Class Named Rectangle
-"""
 
 
 class Rectangle(BaseGeometry):
