@@ -1,0 +1,54 @@
+#How to run the doctest: python3 -m doctest -v ./tests/<file>
+
+Import method:
+       >>> bg = __import__("7-base_geometry").BaseGeometry
+
+Check for Documentation:
+      >>> classDoc= __import__("7-base_geometry").BaseGeometry.__doc__
+      >>> print(len(classDoc or '') > 0)
+      True
+
+      >>> moduleDoc = __import__("7-base_geometry").__doc__
+      >>> print(len(moduleDoc or '') > 0)
+      True
+
+      >>> functionDoc = __import__("7-base_geometry").BaseGeometry.area.__doc__
+      >>> print(len(functionDoc or '') > 0)
+      True
+
+      >>> functionDoc2 = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+      >>> print(len(functionDoc2 or '') > 0)
+      True
+
+Public instance method integer_validator:
+       >>> b = bg()
+       >>> b.integer_validator("int", -1)
+       Traceback (most recent call last):
+       ...
+       ValueError: int must be greater than 0
+
+       >>> b.integer_validator("int", 0)
+       Traceback (most recent call last):
+       ...
+       ValueError: int must be greater than 0
+
+       >>> b.integer_validator("int", "o")
+       Traceback (most recent call last):
+       ...
+       TypeError: int must be an integer
+
+       >>> b.integer_validator("int", 9223372036854775807)
+       >>>
+
+       >>> b.integer_validator("int", 2**64)
+       >>>
+
+       >>> b.integer_validator()
+       Traceback (most recent call last):
+       ...
+       TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+       >>> b.integer_validator("int", 0.1)
+       Traceback (most recent call last):
+       ...
+       TypeError: int must be an integer
