@@ -119,3 +119,14 @@ class Rectangle(Base):
             for fill in range(0, self.width):
                 print("#", end="")
             print(end='\n')
+
+    """
+    Updating the class Rectangle; by overriding the __str__ method
+    """
+
+    def __str__(self):
+        """
+        Return a string repreesntation of the rectangle instance
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
+                                                       self.width, self.height)
