@@ -25,3 +25,20 @@ class Square(Rectangle):
         """
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.height)
+    """
+    Updating the class Square by adding getter and setter
+    """
+    @property
+    def size(self):
+        """
+        Retrieves the width value
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        setter module for Square but uses Rectangle's attributes
+        """
+        self.width = value
+        self.height = value
