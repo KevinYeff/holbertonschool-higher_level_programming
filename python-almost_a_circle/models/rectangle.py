@@ -115,7 +115,11 @@ class Rectangle(Base):
         """
         Prints in stdout the Rectangle instance with the character #
         """
+        for axisY in range(0, self.y):
+            print()
         for row in range(0, self.height):
+            for axisX in range(0, self.x):
+                print(" ", end="")
             for fill in range(0, self.width):
                 print("#", end="")
             print(end='\n')
