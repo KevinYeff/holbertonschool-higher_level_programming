@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module class Rectangle
+Module class Square
 """
 
 from models.rectangle import Rectangle
@@ -24,7 +24,7 @@ class Square(Rectangle):
         the Square instance
         """
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
-                                                 self.height)
+                                                 self.width)
     """
     Updating the class Square by adding getter and setter
     """
@@ -59,3 +59,18 @@ class Square(Rectangle):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    """
+    Updating the Square class so that it returns a dictionary
+    """
+
+    def to_dictionary(self):
+        """
+        Method that returns a dictionary representation of the Square class
+        """
+        dictionary = {}
+        attributes = ['id', 'size', 'x', 'y']
+
+        for passdAttr in attributes:
+            dictionary[passdAttr] = getattr(self, passdAttr)
+        return dictionary
