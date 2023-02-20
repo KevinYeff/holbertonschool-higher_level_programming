@@ -4,6 +4,7 @@ Class Module
 """
 
 import json
+import os.path
 
 
 class Base:
@@ -72,3 +73,22 @@ class Base:
             simple_create = cls(1)
         simple_create.update(**dictionary)
         return (simple_create)
+
+    """
+    Updating the base class by adding the load_from_file
+    """
+    @classmethod
+    def load_from_file(cls):
+        """
+        Return a list of instances
+        """
+        filename = "{}.json".format(cls.__name__)
+        if os.path.exists(filename) is False:
+            return []
+        with open(filename, "r") as fd:
+            list_str = fd.read()
+            list_cls = cls.from_json_string(list_str)
+            list_to_load = []
+            for i in range(len(list_cls)):
+                list_to_load.append(cls.create(**list_cls[i]))
+            return (list_to_load)
