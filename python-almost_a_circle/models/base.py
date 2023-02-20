@@ -55,6 +55,6 @@ class Base:
         Method that returns  a list with the json string representation
         """
         if json_string is None or len(json_string) == 0:
-            return "[]"
+            json_string = "[]"
         else:
             return json.loads(json_string)
