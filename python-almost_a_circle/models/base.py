@@ -44,3 +44,17 @@ class Base:
         with open(filename, mode="w", encoding="utf-8") as fd:
             fd.write(cls.to_json_string(
                 [obj.to_dictionary() for obj in list_objs]))
+
+    """
+    Updating the class base; by adding the method that return a list
+    of the json string representation
+    """
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Method that returns  a list with the json string representation
+        """
+        if json_string is None or len(json_string) == 0:
+            return "[]"
+        else:
+            return json.loads(json_string)
