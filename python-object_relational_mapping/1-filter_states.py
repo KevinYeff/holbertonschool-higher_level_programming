@@ -18,7 +18,8 @@ if __name__ == "__main__":
         "SELECT * FROM states WHERE name LIKE 'N%'  ORDER BY id ASC;")
     # Retrieving the results of the consult
     for row in cursor.fetchall():
-        print(row)
+        if row[1][0] == "N":
+            print(row)
     # Closing
     cursor.close()
     database.close()
