@@ -14,7 +14,7 @@ if __name__ == "__main__":
     cursor = database.cursor()
     # value that matches the argument
     cursor.execute(
-        "SELECT * FROM states WHERE name = '{}'".format(argv[4]))
+        "SELECT * FROM states WHERE BINARY name = '{}'".format(argv[4]))
     # Retrieving the results of the consult
     for row in cursor.fetchall():
         print(row)
