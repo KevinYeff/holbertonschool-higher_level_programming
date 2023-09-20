@@ -1,4 +1,4 @@
 // getting the element to update
-const update_text_color = document.querySelector('body header');
+const updateTextColor = document.querySelector('body header');
 // update the text color
-update_text_color.style.color = '#FF0000'
+updateTextColor.style.color = '#FF0000';
